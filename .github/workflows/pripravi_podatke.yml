@@ -80,14 +80,19 @@ jobs:
         git commit -m "Update changes"
         git push
         
-    - name: DVC push
+    - name: Remove from Git and add to DVC
       run: |
-        dvc add "data/processed/reference_data.csv"
-        dvc push -r origin
-        git add .
-        git commit -m "Update changes"
-        git push
+        git rm --cached 'data/processed/reference_data.csv'
+        echo 'data/processed/reference_data.csv' >> .gitignore
 
+        git add .gitignore
+        git commit -m "stop tracking data/processed/reference_data.csv and add to .gitignore"
+        git push
+        dvc add 'data/processed/reference_data.csv'
+        dvc push
+        git add data/processed/reference_data.csv.dvc data/processed/.gitignore
+        git commit -m "track data/processed/reference_data.csv with DVC"
+        git push
 
     
     
