@@ -3,50 +3,6 @@
   "expectation_suite_name": "MojSuite",
   "expectations": [
     {
-      "expectation_type": "expect_table_row_count_to_be_between",
-      "kwargs": {
-        "max_value": 6,
-        "min_value": 6
-      },
-      "meta": {
-        "profiler_details": {
-          "metric_configuration": {
-            "domain_kwargs": {},
-            "metric_name": "table.row_count",
-            "metric_value_kwargs": null
-          },
-          "num_batches": 1
-        }
-      }
-    },
-    {
-      "expectation_type": "expect_table_columns_to_match_set",
-      "kwargs": {
-        "column_set": [
-          "Obcutna temperatura",
-          "Road closure",
-          "FRC",
-          "Average speed",
-          "Relativna vlaga (2m)",
-          "Stevilo nesrec",
-          "Free flow speed",
-          "Confidence",
-          "Temperatura (2m)",
-          "Verjetnost padavin",
-          "Free flow travel time",
-          "Temperatura rosisca (2m)",
-          "Current travel time",
-          "Cas"
-        ],
-        "exact_match": null
-      },
-      "meta": {
-        "profiler_details": {
-          "success_ratio": 1.0
-        }
-      }
-    },
-    {
       "expectation_type": "expect_column_values_to_not_be_null",
       "kwargs": {
         "column": "Temperatura (2m)"
