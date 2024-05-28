@@ -81,7 +81,13 @@ jobs:
         git push
 
     
-        
+    - name: DVC push
+      run: |
+        dvc add "data/processed/reference_data.csv"
+        dvc push -r origin
+        git add .
+        git commit -m "Update changes"
+        git push
 
 
 
