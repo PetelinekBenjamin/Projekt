@@ -39,14 +39,12 @@ jobs:
       run: |
         python notebooks/Projekt/pre_process.py
 
-        
-        
     - name: Run GreatExpectations
       run: |
         pip install great_expectations
-        python notebooks/Naloga01-IIS/greatExp.py
+        python notebooks/Projekt/GreatExp.py
 
     - name: Run Evidently
       run: |
         pip install evidently
-        python notebooks/Naloga01-IIS/evidently_script.py
+        python notebooks/Projekt/evi_script.py
