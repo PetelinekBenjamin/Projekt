@@ -27,9 +27,7 @@ jobs:
         git config user.email "benjamin.petelinek@gmail.com"
         pip install dvc
         pip3 install --upgrade dvc
-        dvc init
-        git status
-        git commit -m "Initialize DVC"
+        
         
     
     - name: Install dependencies
