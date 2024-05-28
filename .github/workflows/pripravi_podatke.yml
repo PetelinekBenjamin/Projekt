@@ -80,6 +80,12 @@ jobs:
         git commit -m "Update changes"
         git push
 
+
+    - name: remove git
+      run: |
+         git rm -r --cached 'data/processed/reference_data.csv'
+         git commit -m "stop tracking data/processed/reference_data.csv"
+         git push
     
     - name: DVC push
       run: |
