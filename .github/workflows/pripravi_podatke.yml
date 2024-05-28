@@ -107,14 +107,6 @@ jobs:
         # Stop tracking the file with git
         git rm --cached 'data/processed/reference_data.csv'
         
-        # Add the file to .gitignore
-        echo 'data/processed/reference_data.csv' >> .gitignore
-        
-        # Commit the changes in Git
-        git add .gitignore
-        git commit -m "stop tracking data/processed/reference_data.csv and add to .gitignore"
-        git push
-        
         # Add the file with DVC
         dvc add 'data/processed/reference_data.csv'
         
