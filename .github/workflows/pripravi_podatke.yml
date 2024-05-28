@@ -40,8 +40,8 @@ jobs:
       run: |
         python notebooks/Projekt/pridobi_vremenske_podatke.py
         git add .
-        git commit -m "Update changes"
-        git push
+        git status --porcelain | grep -q . && git commit -m "Update changes" && git push
+
         
 
     - name: Run pre_process.py
