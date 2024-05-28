@@ -3,9 +3,9 @@ import os
 
 # Poti do CSV datotek
 file_paths = [
-    r"C:\Users\benja\Desktop\Projekt_Inzinerstvo_inteligentnih_sistemov\data\raw\weather_data.csv",
-    r"C:\Users\benja\Desktop\Projekt_Inzinerstvo_inteligentnih_sistemov\data\raw\traffic_incidents_data.csv",
-    r"C:\Users\benja\Desktop\Projekt_Inzinerstvo_inteligentnih_sistemov\data\raw\traffic_data.csv"
+    r"data\raw\weather_data.csv",
+    r"data\raw\traffic_incidents_data.csv",
+    r"data\raw\traffic_data.csv"
 ]
 
 # Preberi in združi CSV datoteke
@@ -17,7 +17,7 @@ for file_path in file_paths:
 if dfs:
     combined_df = pd.concat(dfs, axis=1)
 
-    output_file = r"C:\Users\benja\Desktop\Projekt_Inzinerstvo_inteligentnih_sistemov\data\processed\reference_data.csv"
+    output_file = r"data\processed\reference_data.csv"
     
     # Shrani DataFrame v CSV, preveri, če datoteka že obstaja
     write_header = not os.path.exists(output_file)
