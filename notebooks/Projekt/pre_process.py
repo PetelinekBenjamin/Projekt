@@ -3,9 +3,9 @@ import os
 
 # Poti do CSV datotek
 file_paths = [
-    r"data\raw\weather_data.csv",
-    r"data\raw\traffic_incidents_data.csv",
-    r"data\raw\traffic_data.csv"
+    r"data/raw/weather_data.csv",
+    r"data/raw/traffic_incidents_data.csv",
+    r"data/raw/traffic_data.csv"
 ]
 
 # Preberi in združi CSV datoteke
