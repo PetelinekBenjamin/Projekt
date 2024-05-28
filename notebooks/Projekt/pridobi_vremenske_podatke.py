@@ -8,6 +8,7 @@ url = "https://api.open-meteo.com/v1/forecast"
 
 # Določitev trenutnega časa
 current_time = datetime.datetime.now()
+print("datetime now: ",current_time)
 
 # Priprava parametrov za zahtevo
 params = {
@@ -29,6 +30,7 @@ if response.status_code == 200:
 
     # Izberi najbližji čas v seznamu
     closest_time = min(data["hourly"]["time"], key=lambda x: abs(datetime.datetime.fromisoformat(x) - current_time))
+    print("najbljizji cas: ",closest_time)
 
     # Indeks najbližjega časa
     closest_index = data["hourly"]["time"].index(closest_time)
