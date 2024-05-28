@@ -39,7 +39,6 @@ jobs:
       run: |
         python notebooks/Projekt/pre_process.py
 
-
         
         
     - name: Run GreatExpectations
