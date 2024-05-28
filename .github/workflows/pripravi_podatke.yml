@@ -24,10 +24,11 @@ jobs:
         pip install -r requirements.txt
         git config user.name "Benjamin"
         git config user.email "benjamin.petelinek@gmail.com"
-        dvc init
-        git add .
-        git commit -m "Update changes"
-        git push
+
+        dvc remote add origin https://dagshub.com/PetelinekBenjamin/Projekt.dvc -f
+        dvc remote modify origin --local auth basic
+        dvc remote modify origin --local user PetelinekBenjamin
+        dvc remote modify origin --local password 30663408e580bdb3f66e074627577a040f36b5ff
 
 
 
