@@ -25,6 +25,7 @@ jobs:
       run: |
         git config user.name "Benjamin"
         git config user.email "benjamin.petelinek@gmail.com"
+        python -m pip install --upgrade pip
         pip install dvc
         pip3 install --upgrade dvc
         
