@@ -25,6 +25,14 @@ jobs:
         pip install -r requirements.txt
         git config user.name "Benjamin"
         git config user.email "benjamin.petelinek@gmail.com"
+
+
+    - name: Run izprazni.py
+      run: |
+        python notebooks/Projekt/izprazni.py
+        git add .
+        git commit -m "Update changes"
+        git push
     
     - name: Run fetch_data_nesrece.py
       run: |
@@ -40,7 +48,8 @@ jobs:
       run: |
         python notebooks/Projekt/pridobi_vremenske_podatke.py
         git add .
-        git status --porcelain | grep -q . && git commit -m "Update changes" && git push
+        git commit -m "Update changes"
+        git push
 
         
 
