@@ -51,7 +51,7 @@ if response.status_code == 200:
     })
 
     # Shrani DataFrame v CSV
-    df.to_csv(r"data\raw\weather_data.csv", index=False)
+    df.to_csv(r"data/raw/weather_data.csv", index=False)
     print("Podatki so bili uspešno shranjeni v 'weather_data.csv'.")
 else:
     print("Napaka pri pridobivanju podatkov o vremenu.")
