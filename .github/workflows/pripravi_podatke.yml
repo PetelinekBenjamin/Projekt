@@ -95,6 +95,8 @@ jobs:
         
     - name: Remove from Git and add to DVC
       run: |
+        dvc remote add -d myremote https://dagshub.com/PetelinekBenjamin/Projekt.dvc || true
+
         set -e
         git rm --cached 'data/processed/reference_data.csv'
         echo 'data/processed/reference_data.csv' >> .gitignore
