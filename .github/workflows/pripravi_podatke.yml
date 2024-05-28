@@ -34,10 +34,17 @@ jobs:
     - name: Run fetch_data_vreme.py
       run: |
         python notebooks/Projekt/pridobi_vremenske_podatke.py
+        git add .
+        git commit -m "Update changes"
+        git push
+        
 
     - name: Run pre_process.py
       run: |
         python notebooks/Projekt/pre_process.py
+        git add .
+        git commit -m "Update changes"
+        git push
 
     - name: Run GreatExpectations
       run: |
@@ -48,3 +55,6 @@ jobs:
       run: |
         pip install evidently
         python notebooks/Projekt/evi_script.py
+        git add .
+        git commit -m "Update changes"
+        git push
