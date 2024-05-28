@@ -24,6 +24,10 @@ jobs:
         pip install -r requirements.txt
         git config user.name "Benjamin"
         git config user.email "benjamin.petelinek@gmail.com"
+        dvc init
+        git add .
+        git commit -m "Update changes"
+        git push
 
 
 
