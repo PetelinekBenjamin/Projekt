@@ -83,6 +83,15 @@ jobs:
     - name: Remove from Git and add to DVC
       run: |
         git rm --cached 'data/processed/reference_data.csv'
+        
+
+    - name: Remove from Git and add to DVC
+      run: |
+        dvc add 'data/processed/reference_data.csv'
+        dvc push -r origin
+        git add .
+        git commit -m "Update changes"
+        git push
        
         
         
