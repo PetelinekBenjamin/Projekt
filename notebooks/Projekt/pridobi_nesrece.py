@@ -48,6 +48,6 @@ if traffic_incidents_data:
         "Stevilo nesrec": [num_incidents]
     })
 
-    df.to_csv(r"data\raw\traffic_incidents_data.csv", index=False)
+    df.to_csv(r"data/raw/traffic_incidents_data.csv", index=False)
     print("Podatki o stevilu nesreč uspešno shranjeni")
 
