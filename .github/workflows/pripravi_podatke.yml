@@ -59,16 +59,4 @@ jobs:
         git commit -m "Update changes"
         git push
 
-    - name: Run GreatExpectations
-      run: |
-        pip install great_expectations
-        python notebooks/Projekt/GreatExp.py
-       
-
-    - name: Run Evidently
-      run: |
-        pip install evidently
-        python notebooks/Projekt/evi_script.py
-        git add .
-        git commit -m "Update changes"
-        git push
+    
