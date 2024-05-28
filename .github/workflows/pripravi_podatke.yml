@@ -95,22 +95,34 @@ jobs:
         
     - name: Remove from Git and add to DVC
       run: |
-        dvc remote add -d myremote https://dagshub.com/PetelinekBenjamin/Projekt.dvc || true
+        dvc remote add -d origin https://dagshub.com/PetelinekBenjamin/Projekt.dvc || true
+        dvc remote modify origin --local auth basic
+        dvc remote modify origin --local user PetelinekBenjamin
+        dvc remote modify origin --local password 30663408e580bdb3f66e074627577a040f36b5ff
 
         set -e
-        git rm --cached 'data/processed/reference_data.csv'
-        echo 'data/processed/reference_data.csv' >> .gitignore
 
+        # Stop tracking the file with git
+        git rm --cached 'data/processed/reference_data.csv'
+        
+        # Add the file to .gitignore
+        echo 'data/processed/reference_data.csv' >> .gitignore
+        
+        # Commit the changes in Git
         git add .gitignore
         git commit -m "stop tracking data/processed/reference_data.csv and add to .gitignore"
         git push
+        
+        # Add the file with DVC
         dvc add 'data/processed/reference_data.csv'
+        
+        # Push the file to remote storage with verbose output for debugging
         dvc push -v || { echo "DVC push failed"; exit 1; }
-
+        
+        # Add DVC changes to Git
         git add data/processed/reference_data.csv.dvc data/processed/.gitignore
         git commit -m "track data/processed/reference_data.csv with DVC"
         git push
-
        
         
         
