@@ -23,13 +23,24 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     
-    - name: Run fetch_data.py
+    - name: Run fetch_data_nesrece.py
       run: |
-        python notebooks/Naloga01-IIS/fetch_data.py
-        
+        python notebooks/Projekt/pridobi_nesrece.py
+
+    - name: Run fetch_data_promet.py
+      run: |
+        python notebooks/Projekt/prodobi_prometne_podatke.py
+
+    - name: Run fetch_data_vreme.py
+      run: |
+        python notebooks/Projekt/pridobi_vremenske_podatke.py
+
     - name: Run pre_process.py
       run: |
-        python notebooks/Naloga01-IIS/pre_process.py
+        python notebooks/Projekt/pre_process.py
+
+
+        
         
     - name: Run GreatExpectations
       run: |
