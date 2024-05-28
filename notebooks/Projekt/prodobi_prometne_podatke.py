@@ -59,5 +59,5 @@ if traffic_data:
     })
 
     # Shrani DataFrame v CSV
-    df.to_csv(r"C:\Users\benja\Desktop\Projekt_Inzinerstvo_inteligentnih_sistemov\data\raw\traffic_data.csv", index=False)
+    df.to_csv(r"data\raw\traffic_data.csv", index=False)
     print("Podatki o prometu so bili uspešno shranjeni v 'traffic_data.csv'.")
