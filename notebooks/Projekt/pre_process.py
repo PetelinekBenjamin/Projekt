@@ -17,7 +17,7 @@ for file_path in file_paths:
 if dfs:
     combined_df = pd.concat(dfs, axis=1)
 
-    output_file = r"data\processed\reference_data.csv"
+    output_file = r"data/processed/reference_data.csv"
     
     # Shrani DataFrame v CSV, preveri, če datoteka že obstaja
     write_header = not os.path.exists(output_file)
