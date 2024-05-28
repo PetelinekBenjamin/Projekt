@@ -93,13 +93,15 @@ jobs:
         git commit -m "Update changes"
         git push
         
-    - name: Remove from Git and add to DVC
+    - name: Configure DVC remote
       run: |
-        dvc remote add -d origin https://dagshub.com/PetelinekBenjamin/Projekt.dvc || true
+        dvc remote add -f -d origin https://dagshub.com/PetelinekBenjamin/Projekt.dvc
         dvc remote modify origin --local auth basic
         dvc remote modify origin --local user PetelinekBenjamin
         dvc remote modify origin --local password 30663408e580bdb3f66e074627577a040f36b5ff
-
+        
+    - name: Remove from Git and add to DVC
+      run: |
         set -e
 
         # Stop tracking the file with git
