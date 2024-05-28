@@ -83,6 +83,14 @@ jobs:
     
     - name: DVC push
       run: |
+        git config user.name "Benjamin"
+        git config user.email "benjamin.petelinek@gmail.com"
+        
+        dvc remote add origin https://dagshub.com/PetelinekBenjamin/Projekt.dvc -f
+        dvc remote modify origin --local auth basic
+        dvc remote modify origin --local user PetelinekBenjamin
+        dvc remote modify origin --local password 30663408e580bdb3f66e074627577a040f36b5ff
+        
         git rm -r --cached 'data/processed/reference_data.csv'
         git commit -m "stop tracking data/processed/reference_data.csv" 
         dvc add "data/processed/reference_data.csv"
