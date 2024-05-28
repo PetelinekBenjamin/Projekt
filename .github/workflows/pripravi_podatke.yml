@@ -83,6 +83,8 @@ jobs:
     
     - name: DVC push
       run: |
+        git rm -r --cached 'data/processed/reference_data.csv'
+        git commit -m "stop tracking data/processed/reference_data.csv" 
         dvc add "data/processed/reference_data.csv"
         dvc push -r origin
         git add .
